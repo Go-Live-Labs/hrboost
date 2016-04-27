@@ -12,8 +12,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
-import com.gll.controller.AnnotationController;
-
 @Component
 public class AuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
     

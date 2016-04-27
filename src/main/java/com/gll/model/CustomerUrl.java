@@ -17,19 +17,19 @@ public class CustomerUrl {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	private String customerURL;
-	private boolean useStatus;
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private char useStatus;
+//	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private String programId;
 	private String LocId;
 	private Date timeUpdated;
-	private int userId;
+	private int updatedBy;
 	
 	public CustomerUrl() {
 		
 	}
 
-	public CustomerUrl(int customerId, String customerURL, boolean useStatus, String programId, String locId,
-			Date timeUpdated, int userId) {
+	public CustomerUrl(int customerId, String customerURL, char useStatus, String programId, String locId,
+			Date timeUpdated, int updatedBy) {
 		super();
 		this.customerId = customerId;
 		this.customerURL = customerURL;
@@ -37,7 +37,7 @@ public class CustomerUrl {
 		this.programId = programId;
 		LocId = locId;
 		this.timeUpdated = timeUpdated;
-		this.userId = userId;
+		this.updatedBy = updatedBy;
 	}
 
 	public int getCustomerId() {
@@ -56,11 +56,11 @@ public class CustomerUrl {
 		this.customerURL = customerURL;
 	}
 
-	public boolean isUseStatus() {
+	public char isUseStatus() {
 		return useStatus;
 	}
 
-	public void setUseStatus(boolean useStatus) {
+	public void setUseStatus(char useStatus) {
 		this.useStatus = useStatus;
 	}
 
@@ -88,13 +88,18 @@ public class CustomerUrl {
 		this.timeUpdated = timeUpdated;
 	}
 
-	public int getUserId() {
-		return userId;
+	public int getUpdatedBy() {
+		return updatedBy;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUpdatedBy(int updatedBy) {
+		this.updatedBy = updatedBy;
 	}
+
+	public char getUseStatus() {
+		return useStatus;
+	}
+
 	
 	
 }

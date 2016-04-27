@@ -1,4 +1,4 @@
-package com.gll.dao;
+/*package com.gll.dao;
 
 import java.util.List;
 import com.gll.model.AnnotationModel;
@@ -17,4 +17,4 @@ public interface AnnotationDao {
 	public List<AnnotationModel> getAllComments(int pinId);
 	public List<AnnotationModel> getAnnotationsbyPinId(int pinId);
 	public void saveComment(Comment comment);
-}
+}*/

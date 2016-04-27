@@ -26,7 +26,7 @@
 				<hibernate.dialect>org.hibernate.dialect.MySQLDialect</hibernate.dialect>
 				<hibernate.show_sql>true</hibernate.show_sql>
 				<hibernate.format_sql>true</hibernate.format_sql>
-				<hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+				<hibernate.hbm2ddl.auto>update</hibernate.hbm2ddl.auto>
 				<logo.image>mylogo.png</logo.image>
 			</properties>
 
@@ -47,7 +47,7 @@
 						<artifactId>tomcat7-maven-plugin</artifactId>
 						<version>2.2</version>
 						<configuration>
-							<port>9090</port>
+							<port>8080</port>
 							<path>/</path>
 						</configuration>
 					</plugin>

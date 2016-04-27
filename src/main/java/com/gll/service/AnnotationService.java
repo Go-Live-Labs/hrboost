@@ -1,4 +1,4 @@
-package com.gll.service;
+/*package com.gll.service;
 
 import java.util.List;
 
@@ -19,3 +19,4 @@ public interface AnnotationService {
 	public List<AnnotationModel> getAnnotationsbyPinId(int pinId);
 	public void saveComment(Comment comment);
 }
+*/

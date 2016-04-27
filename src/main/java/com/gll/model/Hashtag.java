@@ -1,47 +1,38 @@
 package com.gll.model;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
-public class AnnotationHashTag {
-
+public class Hashtag {
 	/*
 	 * Auto generated Primary.
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int annotationHashtagId;
-
-	private int annotationId;
-
+	private String annotationHashtagDescription;
 	private char useStatus;
-	/*
-	 * Program I'd is the java service name that updates the table
-	 */
 	private String programId;
-
-	/* Loc is IP address */
-	private String LocId;
+	private String locId;
 	private Date timeUpdated;
 	private int updatedBy;
 
-	public AnnotationHashTag() {
-		// TODO Auto-generated constructor stub
+	public Hashtag() {
+
 	}
 
-	public AnnotationHashTag(int annotationHashtagId, String annotationHashtagDescription, char useStatus,
-			String programId, String locId, Date timeUpdated, int updatedBy) {
+	public Hashtag(int annotationHashtagId, String annotationHashtagDescription, char useStatus, String programId,
+			String locId, Date timeUpdated, int updatedBy) {
 		super();
 		this.annotationHashtagId = annotationHashtagId;
+		this.annotationHashtagDescription = annotationHashtagDescription;
 		this.useStatus = useStatus;
 		this.programId = programId;
-		LocId = locId;
+		this.locId = locId;
 		this.timeUpdated = timeUpdated;
 		this.updatedBy = updatedBy;
 	}
@@ -54,7 +45,15 @@ public class AnnotationHashTag {
 		this.annotationHashtagId = annotationHashtagId;
 	}
 
-	public char isUseStatus() {
+	public String getAnnotationHashtagDescription() {
+		return annotationHashtagDescription;
+	}
+
+	public void setAnnotationHashtagDescription(String annotationHashtagDescription) {
+		this.annotationHashtagDescription = annotationHashtagDescription;
+	}
+
+	public char getUseStatus() {
 		return useStatus;
 	}
 
@@ -71,11 +70,11 @@ public class AnnotationHashTag {
 	}
 
 	public String getLocId() {
-		return LocId;
+		return locId;
 	}
 
 	public void setLocId(String locId) {
-		LocId = locId;
+		this.locId = locId;
 	}
 
 	public Date getTimeUpdated() {
@@ -86,14 +85,6 @@ public class AnnotationHashTag {
 		this.timeUpdated = timeUpdated;
 	}
 
-	public int getAnnotationId() {
-		return annotationId;
-	}
-
-	public void setAnnotationId(int annotationId) {
-		this.annotationId = annotationId;
-	}
-
 	public int getUpdatedBy() {
 		return updatedBy;
 	}
@@ -102,15 +93,11 @@ public class AnnotationHashTag {
 		this.updatedBy = updatedBy;
 	}
 
-	public char getUseStatus() {
-		return useStatus;
-	}
-
 	@Override
 	public String toString() {
-		return "AnnotationHashTag [annotationHashtagId=" + annotationHashtagId + ", annotationId=" + annotationId
-				+ ", useStatus=" + useStatus + ", programId=" + programId + ", LocId=" + LocId + ", timeUpdated="
-				+ timeUpdated + ", updatedBy=" + updatedBy + "]";
+		return "Hashtag [annotationHashtagId=" + annotationHashtagId + ", annotationHashtagDescription="
+				+ annotationHashtagDescription + ", useStatus=" + useStatus + ", programId=" + programId + ", locId="
+				+ locId + ", timeUpdated=" + timeUpdated + ", updatedBy=" + updatedBy + "]";
 	}
 
 }

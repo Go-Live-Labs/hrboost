@@ -2,29 +2,22 @@ package com.gll.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
-@Entity
-public class UserExpertise {
+public class UserRelationships {
 	/*
 	 * Auto generated Primary.
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
-	private int pinTypeId;
+	private int sourceUserID;
+	private int targetUserID;
+	private int relationshipID;
 	private char useStatus;
-	private int programId;
+	private String programId;
 	private String LocId;
 	private Date timeUpdated;
 	private int updatedBy;
-
-	public UserExpertise() {
-		// TODO Auto-generated constructor stub
-	}
-
 }

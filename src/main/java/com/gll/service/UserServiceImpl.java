@@ -1,4 +1,4 @@
-package com.gll.service;
+/*package com.gll.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,3 +118,4 @@ public class UserServiceImpl implements UserService {
 		return loggedInChecker.getLoggedInUser() != null;
 	}
 }
+*/

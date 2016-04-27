@@ -27,9 +27,7 @@ import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gll.controller.UserController;
 import com.gll.service.UserService;
-import com.gll.service.UserServiceImpl;
 
 /*@ComponentScan(basePackages = { "com.gll" }, excludeFilters = {
 		@Filter(type = FilterType.REGEX, pattern = "com.gll.security.*"),
@@ -37,9 +35,12 @@ import com.gll.service.UserServiceImpl;
 		@Filter(type = FilterType.ASSIGNABLE_TYPE, classes = UserController.class) }, includeFilters = @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = UserService.class) )
 */
 
+@ComponentScan(basePackages = { "com.gll" }, excludeFilters = {
+		@Filter(type = FilterType.REGEX, pattern = "com.gll.security.*")} )
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.gll" })
+//@ComponentScan(basePackages = { "com.gll" })
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	private static final Logger logger = Logger.getLogger(AppConfig.class);

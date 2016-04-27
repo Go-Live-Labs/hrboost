@@ -9,22 +9,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserExpertise {
+public class ReactionType {
 	/*
 	 * Auto generated Primary.
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
-	private int pinTypeId;
+	private int reactionTypeId;
+	private int reactionTypeDescription; //For comment, flag, vote, share
 	private char useStatus;
-	private int programId;
+	private String programId;
 	private String LocId;
 	private Date timeUpdated;
 	private int updatedBy;
-
-	public UserExpertise() {
-		// TODO Auto-generated constructor stub
+	
 	}
-
-}

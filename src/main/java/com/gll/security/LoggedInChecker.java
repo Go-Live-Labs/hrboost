@@ -25,7 +25,7 @@ public class LoggedInChecker {
                 user = userDetails.getUser();
             }
         }
-        logger.info("************** : Exitiing LoggedInChecker--> getLoggedInUser() " + user.getFirstName());
+        logger.info("************** : Exitiing LoggedInChecker--> getLoggedInUser() " + user.toString());
         return user;
     }
 }
