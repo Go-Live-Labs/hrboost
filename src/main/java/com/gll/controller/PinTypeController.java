@@ -28,7 +28,7 @@ public class PinTypeController {
 
 	// -------------------display All -----------------------------------
 
-	@RequestMapping(value = "/annotations/pinType", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/pinType", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<PinType>> getAll() {
 		List<PinType> pinTypeList = pinTypeService.getAll();
 		if (pinTypeList.isEmpty()) {
@@ -39,7 +39,7 @@ public class PinTypeController {
 
 	// -------------------display -----------------------
 
-	@RequestMapping(value = "/annotations/pinType/{pinTypeId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/pinType/{pinTypeId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<PinType> display(@PathVariable("pinTypeId") int pinTypeId) {
 		logger.info("Fetching PinType with pinTypeId " + pinTypeId);
 		PinType pinType = pinTypeService.get(pinTypeId);
@@ -52,7 +52,7 @@ public class PinTypeController {
 
 	// -------------------Create a Record -----------------------
 
-	@RequestMapping(value = "/annotations/pinType", method = RequestMethod.POST)
+	@RequestMapping(value = "/pinType", method = RequestMethod.POST)
 	public ResponseEntity<Void> save(@RequestBody PinType pinType, UriComponentsBuilder ucBuilder, HttpServletRequest request) {
 		logger.info("Creating PinType " + pinType.getPinTypeId());
 		pinType.setLocId(request.getRemoteAddr());
@@ -71,7 +71,7 @@ public class PinTypeController {
 
 	// ------------------- Update a Record -------------------------------
 
-	@RequestMapping(value = "/annotations/pinType/{pinTypeId}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/pinType/{pinTypeId}", method = RequestMethod.PUT)
 	public ResponseEntity<PinType> update(@PathVariable("pinTypeId") int pinTypeId, @RequestBody PinType pinType) {
 		logger.info("Updating PinType " + pinTypeId);
 		PinType oldPinType = pinTypeService.get(pinTypeId);
@@ -87,7 +87,7 @@ public class PinTypeController {
 
 	// ------------------- Delete a Record ----------------
 
-	@RequestMapping(value = "/annotations/pinType/{pinTypeId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/pinType/{pinTypeId}", method = RequestMethod.DELETE)
 	public ResponseEntity<PinType> delete(@PathVariable("pinTypeId") int pinTypeId) {
 		logger.info("Fetching & Deleting PinType with pinTypeId " + pinTypeId);
 		PinType pinType = pinTypeService.get(pinTypeId);
@@ -101,7 +101,7 @@ public class PinTypeController {
 
 	// ------------------- Delete All ---------------
 
-	@RequestMapping(value = "/annotations/pinType", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/pinType", method = RequestMethod.DELETE)
 	public ResponseEntity<PinType> deleteAll() {
 		logger.info("Deleting All PinTypes");
 		pinTypeService.delete(1);
